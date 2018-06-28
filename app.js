@@ -1,18 +1,8 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const config = require('./config/config')
+const myBlogPost = require('./models/post')
 
-mongoose.connect('mongodb://localhost/fucknodejs');
-
-// Schema:定义数据结构
-const BlogPost = new Schema({
-    author: String,
-    title: String,
-    body: String,
-    date: Date
-})
-
-// Model：具体的增删改查实现
-const myBlogPost = mongoose.model('BlogPost', BlogPost)
+mongoose.connect(config.mongodb);
 
 // Model实例化
 const post = new myBlogPost({
@@ -21,7 +11,6 @@ const post = new myBlogPost({
     body: 'nodejs is so hard',
     data: new Date()
 })
-
 // 执行操作
 post.save()
 
@@ -34,6 +23,5 @@ const PORT = 3000;
 
 app.listen(PORT, function (err) {
     if (err) throw err;
-
     console.log(`Server has benn start on ${PORT}`)
 })
