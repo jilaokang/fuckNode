@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const config = require('./config/config')
+
 const myBlogPost = require('./models/post')
+const User = require('./models/user')
 
 mongoose.connect(config.mongodb);
 
@@ -11,8 +13,17 @@ const post = new myBlogPost({
     body: 'nodejs is so hard',
     data: new Date()
 })
+
 // 执行操作
 post.save()
+
+
+// const kaso = new User({
+//     user: 'kaso',
+//     password: 'fucknodejs'
+// })
+
+// kaso.save()
 
 const koa = require('koa')
 
