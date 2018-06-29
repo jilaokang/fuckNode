@@ -11,8 +11,8 @@
         crossorigin="anonymous">
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
     <style>
-        body {
-            padding: 16vh;
+        .container {
+            padding: 10vh 10vw;
         }
     </style>
 </head>
@@ -20,9 +20,15 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-12 col-md-12" style="text-align: right">
                 <div class="form-group">
-                    <input type="button" class="btn btn-default" value="Say something" onclick="location.href='pushpost'" id="submit">
+                    User
+                    <a href="#">signOut</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-5">
+                <div class="form-group">
+                    <input type="button" class="btn btn-default" value="Speak" onclick="location.href='pushpost'" id="submit">
                 </div>
                 <section>
                     <div class="panel panel-default">
@@ -39,6 +45,10 @@
                     </div>
                 </section>
             </div>
+            <footer class="col-md-12 col-xs-12" style="text-align: center">
+                <hr>
+                <div class="form-group">2018 &copy; Kaos</div>
+            </footer>
         </div>
     </div>
 </body>

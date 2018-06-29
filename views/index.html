@@ -11,8 +11,8 @@
         crossorigin="anonymous">
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
     <style>
-        body {
-            padding: 16vh;
+        .container {
+            padding: 10vh 10vw;
         }
     </style>
 </head>
@@ -20,19 +20,28 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-12 col-md-5">
                 <section>
                     <div class="form-group">
                         <label>Username</label>
-                        <input class="form-control" type="text" name="username" id="username" placeholder="username">
+                        <input class="form-control" type="text" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                            maxlength="11" id="username" placeholder="username">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input class="form-control" type="password" name="password" id="password" placeholder="password">
+                        <input class="form-control" type="password" name="password" id="password" maxlength="11" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <font color="#999">* Your account will automatically register.
+                            <br>* Please keep your account number </font>
                     </div>
                     <input type="button" class="btn btn-default" value="submit" id="submit">
                 </section>
             </div>
+            <footer class="col-md-12 col-xs-12" style="text-align: center">
+                <hr/>
+                <div class="form-group">2018 &copy; Kaos</div>
+            </footer>
         </div>
     </div>
     <script>
