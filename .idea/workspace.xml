@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a786a2-80ea-4f95-a972-440490ba92f1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/controller/showpost.contorller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/pushpost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/showpost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/post/pushPost.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/post/showPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/controller/post.contorller.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/controller/pushpost.contorller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/controller/user.contorller.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/controller/user.contorller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/post/showPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/post/showPost.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,15 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="showpost.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/showpost.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,20 +26,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushPost.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushPost.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/post/pushPost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
+            <state relative-caret-position="202">
               <caret line="32" column="120" selection-start-line="32" selection-start-column="120" selection-end-line="32" selection-end-column="120" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showPost.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showPost.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/post/showPost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="277">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -136,13 +127,14 @@
         <option value="$PROJECT_DIR$/routes/user.js" />
         <option value="$PROJECT_DIR$/routes/controller/user.contorller.js" />
         <option value="$PROJECT_DIR$/routes/controller/post.contorller.js" />
-        <option value="$PROJECT_DIR$/views/post/showPost.html" />
         <option value="$PROJECT_DIR$/routes/post.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/routes/controller/pushpost.contorller.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/pushpost.js" />
         <option value="$PROJECT_DIR$/views/post/pushPost.html" />
+        <option value="$PROJECT_DIR$/config/config.js" />
+        <option value="$PROJECT_DIR$/views/post/showPost.html" />
       </list>
     </option>
   </component>
@@ -180,6 +172,11 @@
             <path>
               <item name="fucknodejs" type="b2602c69:ProjectViewProjectNode" />
               <item name="fucknodejs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fucknodejs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fucknodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fucknodejs" type="b2602c69:ProjectViewProjectNode" />
@@ -239,16 +236,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530254994112</updated>
-      <workItem from="1530254997793" duration="5794000" />
+      <workItem from="1530254997793" duration="6011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5794000" />
+    <option name="totallyTimeSpent" value="6011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" />
@@ -257,8 +253,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="npm" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3875862" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24543288" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3875862" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24543288" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -295,13 +291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
           <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/post/showPost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -349,8 +338,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/post/pushPost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
+        <state relative-caret-position="202">
           <caret line="32" column="120" selection-start-line="32" selection-start-column="120" selection-end-line="32" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/post/showPost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
         </state>
       </provider>
     </entry>
