@@ -10,37 +10,38 @@
 </head>
 
 <body>
-    <section>
-        <input type="text" name="username" id="username" placeholder="username">
-        <br>
-        <input type="password" name="password" id="password" placeholder="password">
-        <br>
-        <input type="submit" value="submit" id="submit">
-    </section>
+<section>
+    <input type="text" name="username" id="username" placeholder="username">
+    <br>
+    <input type="password" name="password" id="password" placeholder="password">
+    <br>
+    <input type="submit" value="submit" id="submit">
+</section>
 
-    <script>
-        const username = document.getElementById('username')
-        const password = document.getElementById('password')
-        const submit = document.getElementById('submit')
+<script>
+    const username = document.getElementById('username')
+    const password = document.getElementById('password')
+    const submit = document.getElementById('submit')
 
 
-        submit.addEventListener('click', () => {
-            axios.post('http://localhost:3004/', {
-                    username: username.value,
-                    password: password.value
-                })
-                .then(res => {
-                    console.log(res)
-                    if (res.status === 200) {
-                        alert('success')
-                        username.value = password.value = ''
-                    }
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+    submit.addEventListener('click', () => {
+        axios.post('http://localhost:3004/', {
+            username: username.value,
+            password: password.value
         })
-    </script>
+            .then(res => {
+                console.log(res.data.success)
+                if (res.data.success) {
+                    alert(`注册成功.`)
+                } else {
+                    alert(`已存在.`)
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+</script>
 </body>
 
 </html>
