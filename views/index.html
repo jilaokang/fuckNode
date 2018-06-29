@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
 </head>
+
 <body>
     <section>
-        <input type="text" name="username" id="username" placeholder="username"> <br>
-        <input type="text" name="password" id="password" placeholder="password"> <br>
-        <input type="submit" value="submit">
+        <input type="text" name="username" id="username" placeholder="username">
+        <br>
+        <input type="password" name="password" id="password" placeholder="password">
+        <br>
+        <input type="submit" value="submit" id="submit">
     </section>
+
+    <script>
+        const username = document.getElementById('username')
+        const password = document.getElementById('password')
+        const submit = document.getElementById('submit')
+
+
+        submit.addEventListener('click', () => {
+            axios.post('http://localhost:3004/', {
+                    username: username.value,
+                    password: password.value
+                })
+                .then(res => {
+                    console.log(res)
+                    if (res.status === 200) {
+                        alert('success')
+                        username.value = password.value = ''
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        })
+    </script>
 </body>
+
 </html>
