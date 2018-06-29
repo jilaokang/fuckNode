@@ -17,9 +17,11 @@ app.use(koaBody())
 const userRouter = require('./routes/user')
 const postRouter = require('./routes/showpost')
 const pushpostRouter = require('./routes/pushpost')
+const error404Router = require('./routes/404')
 app.use(userRouter.routes())
 app.use(postRouter.routes())
 app.use(pushpostRouter.routes())
+app.use(error404Router.routes())
 
 app.listen(config.PORT, function (err) {
     if (err) throw err;

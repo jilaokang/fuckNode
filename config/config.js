@@ -1,4 +1,4 @@
 module.exports = {
-    PORT:3005,
+    PORT:3000,
     mongodb:'mongodb://localhost/fucknodejs'
 }
