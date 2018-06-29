@@ -12,4 +12,4 @@ const BlogPost = new Schema({
 
 // Model：具体的增删改查实现
 // model('数据库中的表名', 图表模式)
-module.exports = mongoose.model('BlogPost', BlogPost)
+module.exports = Post = mongoose.model('BlogPost', BlogPost)
