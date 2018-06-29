@@ -4,16 +4,20 @@ const fs = require('fs')
 exports.Signup = async (ctx) => {
     let data = ctx.request.body
 
+    let backupData = {}
     await userModel.findOne({username: data.username}, (error, result) => {
         if (!result) {
             new userModel(data).save();
-            ctx.body = {success: true}
+            backupData.exist = false
         } else {
-            ctx.body = {success: false}
+            backupData.exist = true;
+            (result.password == data.password) ? backupData.verify = true : backupData.verify = false;
         }
 
-        console.log(result);
-        ctx.response.status = 200
+        ctx.body = backupData
+
+        console.log(result, backupData);
+        ctx.response.status = 200;
     })
 }
 
