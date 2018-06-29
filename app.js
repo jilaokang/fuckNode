@@ -10,8 +10,12 @@ mongoose.connect(config.mongodb);
 const koa = require('koa')
 const app = new koa();
 
+// body数据解析
 const koaBody =require('koa-body')
 app.use(koaBody())
+
+// session
+const session = require('koa-session')
 
 // 路由配置
 const userRouter = require('./routes/user')

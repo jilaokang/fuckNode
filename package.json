@@ -21,6 +21,7 @@
     "koa": "^2.5.1",
     "koa-body": "^4.0.4",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
     "koa-static": "^5.0.0",
     "mongoose": "^5.1.7"
   }
