@@ -1,6 +1,8 @@
 module.exports = {
     checkLogin: (ctx, next) => {
-        console.log(ctx.cookies.get('username'))
+        if(!ctx.cookies.get('username')){
+            ctx.response.redirect('/')
+        }
         next()
     }
 }
