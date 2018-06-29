@@ -15,8 +15,6 @@ exports.Signup = async (ctx) => {
         }
 
         ctx.body = backupData
-
-        console.log(result, backupData);
         ctx.response.status = 200;
     })
 }

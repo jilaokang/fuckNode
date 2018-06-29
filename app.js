@@ -15,9 +15,11 @@ app.use(koaBody())
 
 // 路由配置
 const userRouter = require('./routes/user')
-const postRouter = require('./routes/post')
+const postRouter = require('./routes/showpost')
+const pushpostRouter = require('./routes/pushpost')
 app.use(userRouter.routes())
 app.use(postRouter.routes())
+app.use(pushpostRouter.routes())
 
 app.listen(config.PORT, function (err) {
     if (err) throw err;
