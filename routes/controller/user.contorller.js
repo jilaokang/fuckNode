@@ -15,13 +15,14 @@ exports.Signup = async (ctx) => {
             backupData.exist = true;
             (result.password == data.password) ? backupData.verify = true: backupData.verify = false;
         }
+
+
+        ctx.body = backupData
         // 设置cookie暴露你他妈的账号和密码嘻嘻嘻
-        ctx.cookies.set(`username`, `${data.username}`, {
+        ctx.cookies.set(`username`,`${data.username}`, {
             httpOnly: false
         });
 
-        ctx.body = backupData
-        ctx.response.status = 200;
     })
 }
 
