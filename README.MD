@@ -10,15 +10,10 @@ npm start
 ## 功能截图
 
 ### 首页
-![首页](./public/images/index.png)
+<img src="./public/images/index.png" width="38%" />
 
 ### 文章页
-![文章页](./public/images/posts.png)
+<img src="./public/images/posts.png" width="38%" />
 
 ### 发表页
-![发表页](./public/images/push.png)
-
-
-<style>
-    img{width:38%}
-</style>
+<img src="./public/images/push.png" width="38%" />
