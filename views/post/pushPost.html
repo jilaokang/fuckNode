@@ -9,7 +9,10 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <!-- axios ajax-promise库 -->
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+    <!-- Vue-mvvm -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
         .container {
             padding: 10vh 10vw;
@@ -18,25 +21,25 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="root">
         <div class="row">
             <div class="col-xs-12 col-md-12" style="text-align: right">
                 <div class="form-group">
-                    User
-                    <a href="#">signOut</a>
+                    {{username}}
+                    <a href="#" onclick="claerCookies()">signOut</a>
                 </div>
             </div>
             <div class="col-xs-12 col-md-5">
                 <section>
                     <div class="form-group">
                         <label>Title</label>
-                        <input class="form-control" type="text" placeholder="title">
+                        <input id="title" class="form-control" type="text" placeholder="title">
                     </div>
                     <div class="form-group">
                         <label>Content</label>
-                        <textarea class="form-control" rows="3" placeholder="content"></textarea>
+                        <textarea id="content" class="form-control" rows="3" placeholder="content"></textarea>
                     </div>
-                    <input type="button" class="btn btn-default" value="Confirm" id="submit" onclick="location.href='showpost'">
+                    <input type="button" class="btn btn-default" value="Confirm" id="submit">
                 </section>
             </div>
             <footer class="col-md-12 col-xs-12" style="text-align: center">
@@ -45,6 +48,48 @@
             </footer>
         </div>
     </div>
+    <script>
+        var fuckVue = new Vue({
+            el: '#root',
+            data: {},
+            computed: {
+                username() {
+                    const cookie = document.cookie
+                    const formatUsername = cookie.split(';')[1]
+                    return formatUsername.split('=')[1]
+                }
+            }
+        });
+
+
+        let submitDom = document.getElementById('submit')
+
+        submitDom.addEventListener('click', function () {
+            let title = document.getElementById('title')
+            let content = document.getElementById('content')
+            console.log(`title:${title.value} content:${content.value}`)
+            axios.post('/pushpost', {
+                    author: fuckVue.username,
+                    date:Date().toString() ,
+                    title: title.value,
+                    content: content.value
+                })
+                .then(() => {
+                    location.href = 'showpost'
+                })
+
+            title.value = content.value = null
+        })
+
+
+
+        function claerCookies() {
+            axios.delete('/', {
+                claerCookies: true
+            })
+            location.href = '/'
+        }
+    </script>
 </body>
 
 </html>

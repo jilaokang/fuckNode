@@ -9,7 +9,10 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <!-- axios ajax-promise库 -->
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+    <!-- Vue-mvvm -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
         .container {
             padding: 10vh 10vw;
@@ -18,29 +21,29 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="root">
         <div class="row">
             <div class="col-xs-12 col-md-12" style="text-align: right">
                 <div class="form-group">
-                    User
-                    <a href="#">signOut</a>
+                    {{username}}
+                    <a href="#" onclick="claerCookies()">signOut</a>
                 </div>
             </div>
             <div class="col-xs-12 col-md-5">
                 <div class="form-group">
                     <input type="button" class="btn btn-default" value="Speak" onclick="location.href='pushpost'" id="submit">
                 </div>
-                <section>
+                <section v-for='item in post'>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Title</h3>
+                            <h3 class="panel-title">{{item.title}}</h3>
                         </div>
                         <div class="panel-body">
-                            Content
+                            {{item.content}}
                         </div>
                         <div class="panel-body">
-                            May 18
-                            <b>User</b>
+                            {{dateFormat(item.date)}}
+                            <b>{{item.author}}</b>
                         </div>
                     </div>
                 </section>
@@ -51,6 +54,41 @@
             </footer>
         </div>
     </div>
+    <script>
+        var fuckVue = new Vue({
+            el: '#root',
+            data: {
+                post: ''
+            },
+            computed: {
+                username() {
+                    const cookie = document.cookie
+                    const formatUsername = cookie.split(';')[1]
+                    return formatUsername.split('=')[1]
+                }
+            },
+            methods:{
+                dateFormat(date){
+                    let formatDate = date.split(' ')
+
+                    return `${formatDate[1]} ${formatDate[2]}`
+                }
+            }
+        });
+
+        function claerCookies() {
+            axios.delete('/', {
+                claerCookies: true
+            })
+            location.href = '/'
+        }
+
+        axios.post('/showpost')
+            .then(res => {
+                fuckVue.$data.post = res.data
+                console.log(fuckVue.$data.post)
+            })
+    </script>
 </body>
 
 </html>

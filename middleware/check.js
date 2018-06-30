@@ -4,5 +4,6 @@ module.exports = {
             ctx.response.redirect('/')
         }
         next()
+        return
     }
 }

@@ -4,5 +4,6 @@ const router = new Router()
 
 router.get('/', userCtl.Render)
 router.post('/',userCtl.Signup)
+router.delete('/',userCtl.delCookie)
 
 module.exports = router
