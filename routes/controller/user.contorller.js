@@ -19,16 +19,19 @@ exports.Signup = async (ctx) => {
 
         ctx.body = backupData
         // 设置cookie暴露你他妈的账号和密码嘻嘻嘻
-        ctx.cookies.set(`username`,`${data.username}`, {
-            httpOnly: false
+        var millisecond = new Date().getTime();
+        var expiresTime = new Date(millisecond + 6* 1000 * 1);
+
+        ctx.cookies.set(`username`, `${data.username}`, {
+            httpOnly: false,
+            expires: expiresTime,
         });
 
     })
 }
 
 exports.Render = ctx => {
-    const fuckfs = fs.readFileSync('./views/index.html', 'utf-8')
-    ctx.body = fuckfs
+    ctx.body = fs.readFileSync('./views/index.html', 'utf-8')
 }
 
 exports.delCookie = ctx => {

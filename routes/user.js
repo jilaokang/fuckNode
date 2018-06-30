@@ -2,8 +2,10 @@ const Router = require('koa-router');
 const userCtl = require('./controller/user.contorller')
 const router = new Router()
 
-router.get('/', userCtl.Render)
-router.post('/',userCtl.Signup)
-router.delete('/',userCtl.delCookie)
+const checkNotLogin = require('../middleware/check').checkNotLogin
+
+router.get('/', checkNotLogin, userCtl.Render)
+router.post('/', userCtl.Signup)
+router.delete('/', userCtl.delCookie)
 
 module.exports = router

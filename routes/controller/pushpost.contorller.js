@@ -2,9 +2,7 @@ const fs = require('fs')
 const PostModel = require('../../models/post')
 
 exports.Render = async (ctx) => {
-    const fuckfs = fs.readFileSync('./views/post/pushPost.html', 'utf-8')
-
-    ctx.response.body = fuckfs
+    ctx.response.body = fs.readFileSync('./views/post/pushPost.html', 'utf-8')
 }
 
 exports.PushPost = async (ctx) => {
