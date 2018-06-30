@@ -12,21 +12,18 @@ exports.Signup = async (ctx) => {
             new userModel(data).save();
             backupData.exist = false
         } else {
+            result.password == data.password ? backupData.verify = true : backupData.verify = false;
             backupData.exist = true;
-            (result.password == data.password) ? backupData.verify = true: backupData.verify = false;
         }
-
-
         ctx.body = backupData
-        // 设置cookie暴露你他妈的账号和密码嘻嘻嘻
+        // 设置cookie暴露你他妈的账号嘻嘻嘻
         var millisecond = new Date().getTime();
-        var expiresTime = new Date(millisecond + 6* 1000 * 1);
+        var expiresTime = new Date(millisecond + 6 * 1000 * 1);
 
         ctx.cookies.set(`username`, `${data.username}`, {
             httpOnly: false,
             expires: expiresTime,
         });
-
     })
 }
 

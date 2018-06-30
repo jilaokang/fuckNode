@@ -5,8 +5,8 @@ module.exports = {
         }
         next()
     },
-    checkNotLogin:(ctx,next) =>{
-        if(ctx.cookies.get('username')){
+    checkNotLogin: (ctx, next) => {
+        if (ctx.cookies.get('username')) {
             ctx.response.redirect('/showpost')
         }
         next()
