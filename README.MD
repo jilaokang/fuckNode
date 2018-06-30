@@ -17,3 +17,8 @@ npm start
 
 ### 发表页
 ![发表页](./public/images/push.png)
+
+
+<style>
+    img{width:38%}
+</style>
