@@ -1,25 +1,10 @@
-## Node发说说
+[`发说说`](http://119.29.34.129:3000)
 
-[`点我使用`](http://119.29.34.129:3000)
-
-
-技术：koa，mongoose，vue，axios
+技术栈：koa，mongoose，vue，axios
 
 ````bash
 npm i 
+npm i supervisor -g
+
 npm start
 ````
-
-## 功能截图
-
-- 首页
-
-<img src="./public/images/index.png" width="38%" />
-
-- 发表页
-
-<img src="./public/images/push.png" width="38%" />
-
-- 文章页
-
-<img src="./public/images/posts.png" width="38%" />

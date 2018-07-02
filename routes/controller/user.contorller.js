@@ -18,7 +18,7 @@ exports.Signup = async (ctx) => {
         ctx.body = backupData
         // 设置cookie暴露你他妈的账号嘻嘻嘻
         var millisecond = new Date().getTime();
-        var expiresTime = new Date(millisecond + 6 * 1000 * 1);
+        var expiresTime = new Date(millisecond + 60 * 1000 * 20);
 
         ctx.cookies.set(`username`, `${data.username}`, {
             httpOnly: false,
