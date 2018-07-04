@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-md-12" style="text-align: right">
                 <div class="form-group">
                     {{username}}
-                    <a href="#" onclick="claerCookies()">退出</a>
+                    <a href="#" onclick="claerCookies();location.href='/'">退出</a>
                 </div>
             </div>
             <div class="col-xs-12 col-md-5">
@@ -83,7 +83,6 @@
             axios.delete('/', {
                 claerCookies: true
             })
-            location.href = '/'
         }
 
         axios.post('/showpost')
