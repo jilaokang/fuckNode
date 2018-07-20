@@ -4,7 +4,6 @@
 
 ````bash
 npm i 
-npm i supervisor -g
 
 npm start
 ````
